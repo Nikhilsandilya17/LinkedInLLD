@@ -90,7 +90,7 @@ public class LinkedinService {
 
     private void createNotifications(Map<String, User> users) {
         for (User user : users.values()) {
-            Notification notification = new Notification(NotificationType.JOB_POSTING, "Job posting notification");
+            Notification notification = notificationFactory.getNotification(NotificationType.JOB_POSTING);
             user.getNotifications().add(notification);
         }
     }
